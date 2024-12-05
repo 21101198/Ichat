@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Chat App</title>
+  </head>
+  <body>
+    <!-- Login Form Section -->
+    <div id="login-container">
+      <h1 class="title">iChat Login 💬</h1>
+      <form id="login-form">
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your name"
+          maxlength="20"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Chat App Section (Initially Hidden) -->
+    <div id="chat-container" style="display: none;">
+      <h1 class="title">iChat 💬</h1>
+      <div class="main">
+        <!-- User Input Section (Name) -->
+        <div class="name">
+          <span><i class="far fa-user"></i></span>
+          <input
+            type="text"
+            id="name-input"
+            class="name-input"
+            readonly
+          />
+        </div>
+
+        <!-- Messages Section -->
+        <ul class="message-container" id="message-container"></ul>
+
+        <!-- Message Form Section -->
+        <form class="message-form" id="message-form">
+          <input
+            type="text"
+            name="message"
+            id="message-input"
+            class="message-input"
+          />
+          <button type="button" id="record-button" class="record-button">
+            🎙️
+          </button>
+          <div class="v-divider"></div>
+          <button type="submit" class="send-button">
+            Send <span><i class="fas fa-paper-plane"></i></span>
+          </button>
+        </form>
+      </div>
+
+      <h3 class="clients-total" id="client-total">Total clients: 2</h3>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
+      integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
